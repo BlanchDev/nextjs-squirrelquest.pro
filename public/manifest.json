@@ -1,0 +1,22 @@
+{
+  "name": "SquirrelQuest Construction Services",
+  "short_name": "SquirrelQuest",
+  "description": "Professional carpentry and construction services in Calgary, Alberta. Specializing in structural erections, back framing, and specialty carpentry.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#141414",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/favicon.webp",
+      "sizes": "128x128",
+      "type": "image/webp"
+    },
+    {
+      "src": "/images/logo.webp",
+      "sizes": "1565x1513",
+      "type": "image/webp"
+    }
+  ]
+}

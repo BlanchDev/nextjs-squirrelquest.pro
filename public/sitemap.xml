@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://squirrelquest.pro</loc>
+    <lastmod>2024-11-04</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://squirrelquest.pro/services</loc>
+    <lastmod>2024-11-04</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://squirrelquest.pro/gallery</loc>
+    <lastmod>2024-11-04</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://squirrelquest.pro/services/carpentry-services</loc>
+    <lastmod>2024-11-04</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://squirrelquest.pro/services/structural-erections</loc>
+    <lastmod>2024-11-04</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://squirrelquest.pro/services/back-framing</loc>
+    <lastmod>2024-11-04</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://squirrelquest.pro/services/specialty-carpentry</loc>
+    <lastmod>2024-11-04</lastmod>
+    <priority>0.9</priority>
+  </url>
+</urlset>

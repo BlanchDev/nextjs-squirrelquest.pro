@@ -1,0 +1,196 @@
+.home-section2 {
+  border-top: 5px solid #22190d;
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  background-color: #141414;
+}
+
+@media (max-width: 1000px) {
+  .home-section2 {
+    padding: 60px 10px;
+  }
+}
+
+.home-section2 h1 {
+  font-weight: 200;
+  font-size: 2em;
+}
+
+@media (max-width: 1000px) {
+  .home-section2 h1 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+}
+
+.home-section2 .services {
+  width: 100%;
+  border: 1px solid #1f1f1f;
+  background-color: #090909;
+  -webkit-box-shadow: 0 0 100px 1px #0a0a0a;
+          box-shadow: 0 0 100px 1px #0a0a0a;
+}
+
+.home-section2 .services .titles {
+  width: 100%;
+}
+
+@media (max-width: 1800px) {
+  .home-section2 .services .titles {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.home-section2 .services .titles .service {
+  padding: 50px;
+  width: calc(100% - 100px);
+  height: 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border: 1px solid #090909;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+@media (max-width: 1000px) {
+  .home-section2 .services .titles .service {
+    padding: 20px;
+    width: calc(100% - 40px);
+    border: 1px solid #1f1f1f;
+  }
+}
+
+.home-section2 .services .titles .service.loop {
+  background-color: #1f1f1f;
+  border: 1px solid #555555 !important;
+  color: #ffffff !important;
+}
+
+.home-section2 .services .titles .service.clicked {
+  background-color: #1f1f1f;
+}
+
+.home-section2 .services .titles .service:nth-child(2) {
+  border-left: 1px solid #1f1f1f;
+  border-right: 1px solid #1f1f1f;
+}
+
+.home-section2 .services .titles .service:hover {
+  background-color: #1f1f1f;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.home-section2 .services .titles .service .image {
+  width: 160px;
+  min-width: 160px;
+  height: 160px;
+  min-height: 160px;
+  border-radius: 50%;
+  border: 3px solid orangered;
+  text-align: center;
+  background: rgba(255, 165, 0, 0.1);
+}
+
+@media (max-width: 1000px) {
+  .home-section2 .services .titles .service .image {
+    width: 90px;
+    min-width: 90px;
+    height: 90px;
+    min-height: 90px;
+  }
+}
+
+.home-section2 .services .titles .service h2 {
+  white-space: nowrap;
+  font-family: var(--font-bebas-neue);
+  font-size: 2.5em;
+  text-align: right;
+  color: #999999;
+}
+
+@media (max-width: 1000px) {
+  .home-section2 .services .titles .service h2 {
+    font-size: 1.5em;
+  }
+}
+
+.home-section2 .details {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  font-size: 1.2em;
+  background-color: #151515;
+  border: 1px solid #252525;
+  border-top: 3px solid #9e412c;
+}
+
+.home-section2 .details h2 {
+  font-weight: 200;
+  font-size: 2em;
+  color: #ffffff;
+}
+
+@media (max-width: 1000px) {
+  .home-section2 .details h2 {
+    text-align: center;
+  }
+}
+
+.home-section2 .details p {
+  font-weight: 200;
+  font-family: var(--font-geist-mono);
+}
+
+@media (max-width: 1000px) {
+  .home-section2 .details p {
+    text-align: center;
+  }
+}
+
+.home-section2 .details .contact {
+  width: 100%;
+  margin-top: 50px;
+}
+
+@media (max-width: 1000px) {
+  .home-section2 .details .contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.home-section2 .details .contact .button {
+  width: 262px;
+  font-family: var(--font-itim);
+  font-size: 1.2em;
+  padding: 10px 0px;
+  color: #ffffff;
+  text-align: center;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.home-section2 .details .contact .button:hover {
+  scale: 1.1;
+  -webkit-box-shadow: 0 0 10px 1px #000000;
+          box-shadow: 0 0 10px 1px #000000;
+}
+
+.home-section2 .details .contact .whatsapp {
+  border-radius: 1px 1px 5px 25px;
+  background-color: #379e2c;
+}
+
+.home-section2 .details .contact .call {
+  border-radius: 1px 1px 25px 5px;
+  background-color: #9e412c;
+}
+/*# sourceMappingURL=HomeSection2.css.map */

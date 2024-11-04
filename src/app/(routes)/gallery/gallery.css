@@ -1,0 +1,123 @@
+.gallery-page {
+  width: 100vw;
+  height: 100%;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.gallery-page h1 {
+  font-size: 2.1em;
+}
+
+.gallery-page .gallery-grid {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 1280px) {
+  .gallery-page .gallery-grid {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-page .gallery-grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-page .gallery-grid {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.gallery-page .gallery-grid .gallery-item {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.gallery-page .gallery-grid .gallery-item:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.gallery-page .gallery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.gallery-page .gallery-modal .gallery-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-page .gallery-modal .gallery-modal-content {
+  position: relative;
+  z-index: 1001;
+  background: black;
+  border: 1px solid #505050;
+}
+
+.gallery-page .gallery-modal .gallery-modal-content .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #dfdfdf;
+  font-size: 50px;
+  cursor: pointer;
+  z-index: 1001;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.gallery-page .gallery-modal .gallery-modal-content .close-button:hover {
+  color: #ff6246;
+  scale: 1.1;
+}
+
+.gallery-page .gallery-modal .gallery-modal-content .modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.gallery-page .gallery-modal .gallery-modal-content .modal-content .modal-image {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=gallery.css.map */
