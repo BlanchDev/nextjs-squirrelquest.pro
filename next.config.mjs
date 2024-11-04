@@ -20,10 +20,10 @@ const nextConfig = {
         has: [
           {
             type: "host",
-            value: "www.squirrelquest.pro",
+            value: "squirrelquest.pro",
           },
         ],
-        destination: "https://squirrelquest.pro/:path*",
+        destination: "https://www.squirrelquest.pro/:path*",
         permanent: true,
       },
       {
