@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./global.css";
 import Header from "./components/Header/Header";
 import PrefetchPages from "./components/PrefetchPages";
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -139,6 +140,22 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${itim.variable} ${bebasNeue.variable} column aic`}
       >
+        <Script
+          strategy='afterInteractive'
+          src='https://www.googletagmanager.com/gtag/js?id=G-BK4YXEE648'
+        />
+        <Script
+          id='google-analytics'
+          strategy='afterInteractive'
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-BK4YXEE648');
+            `,
+          }}
+        />
         <PrefetchPages />
         <Header />
         {children}
