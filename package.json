@@ -4,13 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "bun run next dev",
+    "dev:server": "bun --hot server/server.js",
     "build": "bun run next build",
+    "build:server": "bun build server/server.js",
+    "dev:all": "concurrently \"bun run dev\" \"bun run dev:server\"",
+    "build:all": "concurrently \"bun run build\" \"bun run build:server\"",
     "start": "bun run next start",
     "lint": "bun run next lint"
   },
   "dependencies": {
     "@iconify/react": "^5.0.2",
     "@tanstack/react-virtual": "^3.10.8",
+    "express": "^4.21.1",
     "million": "^3.1.11",
     "next": "14.0.4",
     "react": "^18.2.0",
@@ -18,6 +23,7 @@
     "react-intersection-observer": "^9.13.1"
   },
   "devDependencies": {
+    "concurrently": "^9.1.0",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "healthier": "^7.0.0"
