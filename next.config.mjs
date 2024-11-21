@@ -113,7 +113,7 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: "https://www.squirrelquest.pro/api/:path*",
+        destination: "https://www.squirrelquest.pro/:path*",
       },
     ];
   },
