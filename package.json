@@ -4,11 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "bun run next dev",
-    "dev:server": "bun --hot server/server.js",
     "build": "bun run next build",
-    "build:server": "bun build server/server.js",
-    "dev:all": "concurrently \"bun run dev\" \"bun run dev:server\"",
-    "build:all": "concurrently \"bun run build\" \"bun run build:server\"",
     "start": "bun run next start",
     "lint": "bun run next lint"
   },

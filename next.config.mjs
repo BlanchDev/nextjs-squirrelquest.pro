@@ -108,15 +108,6 @@ const nextConfig = {
 
     return config;
   },
-
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "https://www.squirrelquest.pro/:path*",
-      },
-    ];
-  },
 };
 
 export default million.next(nextConfig);
