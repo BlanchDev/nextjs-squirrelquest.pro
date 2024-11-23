@@ -8,7 +8,6 @@ A professional services website built with Next.js, showcasing carpentry, constr
 - Performance-focused architecture with route prefetching
 - Image optimization and lazy loading
 - SEO-friendly with proper meta tags and sitemap
-- Multi-language support (English)
 - Accessible design following WCAG guidelines
 
 ## Technical Stack
@@ -51,8 +50,7 @@ A professional services website built with Next.js, showcasing carpentry, constr
 For inquiries:
 
 - Phone: 1-(587)-229-9345
-- WhatsApp: Available through website
-- Location: Calgary, Alberta, Canada
+- Contact Page: [Contact Page](https://squirrelquest.pro/contact)
 
 ## Development
 
