@@ -77,10 +77,13 @@
       }
 
       .contact {
+        width: 100%;
+
         .button {
           padding: 10px 20px;
           font-size: 1.2em;
           color: #ededed;
+          text-align: center;
         }
 
         .call {
@@ -94,7 +97,7 @@
           }
         }
 
-        .whatsapp {
+        .viaform {
           background-color: #000000;
           border: 1px solid #69ba89;
           transition: all 0.2s ease;

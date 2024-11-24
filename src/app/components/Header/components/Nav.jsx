@@ -80,6 +80,16 @@ function Nav() {
       >
         Gallery
       </Link>
+      <Link
+        href='/contact'
+        className={`nav-item row aic jcc ${
+          pathname.includes("/contact") ? "active" : ""
+        }`}
+        onMouseEnter={handleMouseEnter}
+        aria-label='Contact'
+      >
+        Contact
+      </Link>
     </nav>
   );
 }

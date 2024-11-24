@@ -28,6 +28,12 @@
   height: 100%;
 }
 
+@media (max-width: 385px) {
+  .header .content .logo {
+    display: none;
+  }
+}
+
 .header .content .logo .logo-text {
   white-space: nowrap;
   font-family: var(--font-itim);
@@ -35,7 +41,7 @@
   font-weight: 200;
 }
 
-@media (max-width: 415px) {
+@media (max-width: 510px) {
   .header .content .logo .logo-text {
     display: none;
   }

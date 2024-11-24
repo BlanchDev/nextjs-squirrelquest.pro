@@ -1,4 +1,3 @@
-import Image from "next/image";
 import "./HomeSection1.css";
 import Link from "next/link";
 
@@ -40,12 +39,12 @@ function HomeSection1() {
           </h3>
         </div>
         <div className='logo-and-buttons row aic jcc gap50'>
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src='/images/real-logo.webp'
             alt='Logo'
             width={150}
             height={150}
-            priority
           />
           <nav
             className='contact column aic jcc gap15'
@@ -60,13 +59,11 @@ function HomeSection1() {
             </Link>
             <pre>or</pre>
             <Link
-              className='button whatsapp'
-              href='https://wa.me/15872299345'
-              target='_blank'
-              rel='noopener noreferrer'
-              aria-label='Contact via WhatsApp'
+              className='button viaform'
+              href='/contact'
+              aria-label='Contact via Form'
             >
-              Contact via WhatsApp
+              Send Message via Form
             </Link>
           </nav>
         </div>

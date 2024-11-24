@@ -8,13 +8,11 @@ function ContactButtons() {
       aria-label='Contact Buttons'
     >
       <Link
-        className='button whatsapp'
-        href='https://wa.me/15872299345'
-        target='_blank'
-        rel='noopener noreferrer'
-        aria-label='Contact via WhatsApp'
+        className='button viaform'
+        href='/contact'
+        aria-label='Contact via Form'
       >
-        WhatsApp
+        Send Message via Form
       </Link>
       <pre>or</pre>
       <Link className='button call' href='tel:+15872299345' aria-label='Call'>

@@ -29,14 +29,14 @@
   color: #000;
 }
 
-.contact-buttons .whatsapp {
+.contact-buttons .viaform {
   background-color: #000000;
   border: 1px solid #69ba89;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
-.contact-buttons .whatsapp:hover {
+.contact-buttons .viaform:hover {
   background-color: #69ba89;
   color: #000;
 }

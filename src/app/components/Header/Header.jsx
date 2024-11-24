@@ -10,14 +10,7 @@ function Header() {
     <header className='header row aic jcc'>
       <div className='content row aic jcsb gap25'>
         <Link href='/' className='logo row aic gap10' aria-label='Home'>
-          <Image
-            src='/images/logo.webp'
-            alt='logo'
-            width={30}
-            height={30}
-            loading='lazy'
-            quality={75}
-          />
+          <Image src='/images/logo.webp' alt='logo' width={30} height={30} />
           <span className='logo-text row aic'>
             <span style={{ color: "#feca98" }}>Squirrel</span>
             <span style={{ color: "#fff" }}>Quest</span>

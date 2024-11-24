@@ -67,7 +67,6 @@ function HomeSection2() {
                 alt='Residential Framing Services'
                 width={80}
                 height={80}
-                loading='lazy'
                 quality={75}
               />
             </div>
@@ -92,7 +91,6 @@ function HomeSection2() {
                 alt='Commercial Framing Services'
                 width={90}
                 height={90}
-                loading='lazy'
                 quality={75}
               />
             </div>
@@ -117,7 +115,6 @@ function HomeSection2() {
                 alt='Back Framing Specialist'
                 width={90}
                 height={90}
-                loading='lazy'
                 quality={75}
               />
             </div>
@@ -140,13 +137,11 @@ function HomeSection2() {
 
         <nav className='contact row aic jcc gap50' aria-label='Contact Buttons'>
           <Link
-            className='button whatsapp'
-            href='https://wa.me/15872299345'
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='Contact via WhatsApp'
+            className='button viaform'
+            href='/contact'
+            aria-label='Contact via Form'
           >
-            Contact via WhatsApp
+            Send Message via Form
           </Link>{" "}
           <pre>or</pre>
           <Link
