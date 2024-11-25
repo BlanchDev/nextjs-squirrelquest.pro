@@ -16,6 +16,7 @@ function Dashboard() {
         if (typeof localStorage !== "undefined") {
           localStorage.removeItem("sessionKey");
         }
+        router.push("/admin");
         toast.success(response.data.message);
       } else {
         if (typeof localStorage !== "undefined") {
