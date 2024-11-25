@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { formatTimeAgo } from "../utils/formatTime";
+import { useRouter } from "next/navigation";
 
 function Monitor() {
   const [userIps, setUserIps] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,14 +20,18 @@ function Monitor() {
 
         if (response.data.success) {
           setUserIps(response.data.data);
+        } else {
+          localStorage.removeItem("sessionKey");
+          router.push("/admin");
         }
       } catch (error) {
-        console.error("Failed to fetch IP data:", error);
+        localStorage.removeItem("sessionKey");
+        router.push("/admin");
       }
     };
 
     fetchData();
-  }, []);
+  }, [router]);
 
   return (
     <div className='content column gap20'>

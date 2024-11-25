@@ -3,27 +3,32 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { formatTimeAgo } from "../utils/formatTime";
+import { useRouter } from "next/navigation";
 
 function Sessions() {
   const [sessions, setSessions] = useState([]);
-
+  const router = useRouter();
   useEffect(() => {
     const fetchSessions = async () => {
-      const res = await axios.get("/api/admin/dashboard/sessions", {
-        headers: {
-          sessionKey: localStorage.getItem("sessionKey"),
-          "Cache-Control": "no-cache",
-          Pragma: "no-cache",
-          Expires: "0",
-        },
-      });
-      const data = res.data;
-      setSessions(data.sessions);
-      console.log(data.sessions);
+      try {
+        const res = await axios.get("/api/admin/dashboard/sessions", {
+          headers: {
+            sessionKey: localStorage.getItem("sessionKey"),
+            "Cache-Control": "no-cache",
+            Pragma: "no-cache",
+            Expires: "0",
+          },
+        });
+        const data = res.data;
+        setSessions(data.sessions);
+      } catch (error) {
+        localStorage.removeItem("sessionKey");
+        router.push("/admin");
+      }
     };
 
     fetchSessions();
-  }, []);
+  }, [router]);
 
   return (
     <div className='content column gap20'>

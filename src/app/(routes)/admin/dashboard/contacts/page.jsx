@@ -4,27 +4,35 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import "./dashboard-contacts.css";
 import { formatTimeAgo } from "../utils/formatTime";
+import { useRouter } from "next/navigation";
 
 function Contacts() {
   const [contacts, setContacts] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchContacts = async () => {
-      const res = await axios.get("/api/admin/dashboard/contacts", {
-        headers: {
-          sessionKey: localStorage.getItem("sessionKey"),
-          "Cache-Control": "no-cache",
-          Pragma: "no-cache",
-          Expires: "0",
-        },
-      });
-      const data = res.data;
-      setContacts(data.contacts);
-      console.log(data.contacts);
+      try {
+        const res = await axios.get("/api/admin/dashboard/contacts", {
+          headers: {
+            sessionKey: localStorage.getItem("sessionKey"),
+            "Cache-Control": "no-cache",
+            Pragma: "no-cache",
+            Expires: "0",
+          },
+        });
+        const data = res.data;
+        setContacts(data.contacts);
+        console.log(data.contacts);
+      } catch (error) {
+        console.error("Failed to fetch contacts data:", error);
+        localStorage.removeItem("sessionKey");
+        router.push("/admin");
+      }
     };
 
     fetchContacts();
-  }, []);
+  }, [router]);
 
   return (
     <div className='content column gap20'>

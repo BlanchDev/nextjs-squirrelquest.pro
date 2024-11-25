@@ -3,27 +3,34 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { formatTimeAgo } from "../utils/formatTime";
+import { useRouter } from "next/navigation";
 
 function Logs() {
   const [logs, setLogs] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchLogs = async () => {
-      const res = await axios.get("/api/admin/dashboard/logs", {
-        headers: {
-          sessionKey: localStorage.getItem("sessionKey"),
-          "Cache-Control": "no-cache",
-          Pragma: "no-cache",
-          Expires: "0",
-        },
-      });
-      const data = res.data;
-      setLogs(data.logs);
-      console.log(data.logs);
+      try {
+        const res = await axios.get("/api/admin/dashboard/logs", {
+          headers: {
+            sessionKey: localStorage.getItem("sessionKey"),
+            "Cache-Control": "no-cache",
+            Pragma: "no-cache",
+            Expires: "0",
+          },
+        });
+        const data = res.data;
+        setLogs(data.logs);
+      } catch (error) {
+        console.error("Failed to fetch logs data:", error);
+        localStorage.removeItem("sessionKey");
+        router.push("/admin");
+      }
     };
 
     fetchLogs();
-  }, []);
+  }, [router]);
 
   return (
     <div className='content column gap20'>

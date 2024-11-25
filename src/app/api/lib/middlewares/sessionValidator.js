@@ -1,4 +1,5 @@
 import pool from "../db";
+import logoutNoSession from "./logoutNoSession";
 
 export async function validateSession(sessionKey, ip) {
   try {
@@ -6,9 +7,14 @@ export async function validateSession(sessionKey, ip) {
       "SELECT * FROM adminsessions WHERE sessionKey = ? AND ip = ? AND isDeleted = 0",
       [sessionKey, ip],
     );
-    return rows.length > 0;
+    if (rows.length === 0) {
+      await logoutNoSession(sessionKey, ip);
+      return false;
+    }
+    return true;
   } catch (error) {
     console.error("Session validation error:", error);
+    await logoutNoSession(sessionKey, ip);
     return false;
   }
 }

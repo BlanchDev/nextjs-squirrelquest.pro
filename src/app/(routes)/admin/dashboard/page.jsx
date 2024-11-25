@@ -8,15 +8,23 @@ function Dashboard() {
   const router = useRouter();
 
   const handleLogout = async () => {
-    const response = await axios.post("/api/admin/logout", {
-      sessionKey: localStorage.getItem("sessionKey"),
-    });
-    if (response.data.success) {
+    try {
+      const response = await axios.post("/api/admin/logout", {
+        sessionKey: localStorage.getItem("sessionKey"),
+      });
+      if (response.data.success) {
+        localStorage.removeItem("sessionKey");
+        router.push("/admin");
+        toast.success(response.data.message);
+      } else {
+        localStorage.removeItem("sessionKey");
+        router.push("/admin");
+        toast.error(response.data.message);
+      }
+    } catch (error) {
       localStorage.removeItem("sessionKey");
       router.push("/admin");
-      toast.success(response.data.message);
-    } else {
-      toast.error(response.data.message);
+      toast.error(error.response.data.message);
     }
   };
 

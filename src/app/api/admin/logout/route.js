@@ -33,13 +33,14 @@ export async function POST(request) {
 
     // Mark the session as deleted
     const [result] = await pool.query(
-      "UPDATE adminsessions SET isDeleted = 1 WHERE sessionKey = ? AND ip = ? AND isDeleted = 0",
+      "UPDATE adminsessions SET isDeleted = 1 WHERE (sessionKey = ? OR ip = ?) AND isDeleted = 0",
       [sessionKey, ip],
     );
 
     if (result.affectedRows > 0) {
       // Log the successful logout
       await logRequest(ip, "admin_logout_success");
+      localStorage.removeItem("sessionKey");
 
       return NextResponse.json(
         {
@@ -49,6 +50,7 @@ export async function POST(request) {
         { status: 200 },
       );
     } else {
+      localStorage.removeItem("sessionKey");
       return NextResponse.json(
         {
           success: false,
