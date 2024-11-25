@@ -8,7 +8,7 @@ import { logRequest } from "../../lib/middlewares/logRequester";
 
 dotenv.config();
 
-const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
 export async function POST(request) {
   try {
