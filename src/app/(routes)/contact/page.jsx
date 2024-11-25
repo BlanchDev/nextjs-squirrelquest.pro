@@ -64,7 +64,6 @@ export const metadata = {
 function Contact() {
   return (
     <>
-      {" "}
       <div className='contact-page column aic'>
         <div className='contact-container column'>
           <div className='contact-content column'>

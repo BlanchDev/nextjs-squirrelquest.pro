@@ -1,0 +1,22 @@
+.dashboard-contacts-container {
+  width: 100%;
+
+  .contact-item {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #242424;
+
+    .contact-item-header {
+      width: 100%;
+      border-bottom: 1px solid #242424;
+      padding-bottom: 15px;
+    }
+
+    .contact-item-message {
+      width: 100%;
+      padding: 20px;
+      border-radius: 5px;
+      background: #191919;
+    }
+  }
+}

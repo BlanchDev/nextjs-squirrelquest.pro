@@ -1,29 +1,8 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
-import pool from "../lib/middlewares/db";
-
-const MAX_REQUESTS = 5; // 5 requests per hour
-
-// Rate limit control
-async function isRateLimited(ip) {
-  try {
-    const [rows] = await pool.query(
-      `SELECT COUNT(*) as requestCount FROM contacts WHERE ip = ? AND createdTime > ?`,
-      [ip, Date.now() - 60 * 60 * 1000], // Last 1 hour
-    );
-
-    console.debug("Rate limit check:", {
-      ip,
-      requestCount: rows[0].requestCount,
-      limit: MAX_REQUESTS,
-    });
-
-    return rows[0].requestCount >= MAX_REQUESTS;
-  } catch (error) {
-    console.error("Rate limit check error:", error);
-    return false;
-  }
-}
+import pool from "../lib/db";
+import { isRateLimited } from "../lib/middlewares/rateLimiter";
+import { logRequest } from "../lib/middlewares/logRequester";
 
 export async function POST(request) {
   try {
@@ -35,7 +14,7 @@ export async function POST(request) {
       "unknown";
 
     // Rate limit control
-    const isLimited = await isRateLimited(ip);
+    const isLimited = await isRateLimited(ip, "contact_form_submission");
     if (isLimited) {
       return NextResponse.json(
         {
@@ -71,11 +50,14 @@ export async function POST(request) {
     }
 
     // Save the message
-    const createdTime = Date.now();
+    const createdAt = Date.now();
     await pool.query(
-      "INSERT INTO contacts (fullname, mailorphone, msg, createdTime, ip) VALUES (?, ?, ?, ?, ?)",
-      [fullname, mailorphone, msg, createdTime, ip],
+      "INSERT INTO contacts (fullname, mailorphone, msg, createdAt, ip) VALUES (?, ?, ?, ?, ?)",
+      [fullname, mailorphone, msg, createdAt, ip],
     );
+
+    // Log the request
+    await logRequest(ip, "contact_form_submission");
 
     return NextResponse.json(
       {

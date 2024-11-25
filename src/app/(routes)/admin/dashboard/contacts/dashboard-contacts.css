@@ -1,0 +1,23 @@
+.dashboard-contacts-container {
+  width: 100%;
+}
+
+.dashboard-contacts-container .contact-item {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #242424;
+}
+
+.dashboard-contacts-container .contact-item .contact-item-header {
+  width: 100%;
+  border-bottom: 1px solid #242424;
+  padding-bottom: 15px;
+}
+
+.dashboard-contacts-container .contact-item .contact-item-message {
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  background: #191919;
+}
+/*# sourceMappingURL=dashboard-contacts.css.map */

@@ -3,6 +3,7 @@ import "./global.css";
 import Header from "./components/Header/Header";
 import PrefetchPages from "./components/PrefetchPages";
 import Script from "next/script";
+import UserIPs from "./components/UserIPs";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -156,6 +157,7 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
+        <UserIPs />
         <PrefetchPages />
         <Header />
         {children}

@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useCallback } from "react";
 
 const ROUTES = {
-  main: ["/", "/services", "/gallery"],
+  main: ["/", "/services", "/gallery", "/contact"],
   services: [
     "/services/carpentry-services",
     "/services/structural-erections",

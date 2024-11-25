@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /api
 Disallow: /api/
+Disallow: /admin
+Disallow: /admin/
 
 Sitemap: https://squirrelquest.pro/sitemap.xml

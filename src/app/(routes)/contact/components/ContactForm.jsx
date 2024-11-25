@@ -23,11 +23,16 @@ function ContactForm() {
 
       if (resp.data.success) {
         toast.success("Message sent successfully");
+        setFormData({
+          fullname: "",
+          mailorphone: "",
+          msg: "",
+        });
       } else {
         toast.error(resp.data.message);
       }
     } catch (error) {
-      toast.error("An error occurred while sending the message");
+      toast.error(`${error.response.data.message}`);
     }
   };
 
