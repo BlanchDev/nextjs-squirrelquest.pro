@@ -22,7 +22,9 @@ function Sessions() {
         const data = res.data;
         setSessions(data.sessions);
       } catch (error) {
-        localStorage.removeItem("sessionKey");
+        if (typeof localStorage !== "undefined") {
+          localStorage.removeItem("sessionKey");
+        }
         router.push("/admin");
       }
     };

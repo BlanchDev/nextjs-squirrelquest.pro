@@ -26,8 +26,6 @@ export async function POST(request) {
 
     // If this IP has not been logged within the last 24 hours, log it
     if (!existingIp.length) {
-      console.debug("New IP logged:", { ip, pageUrl, createdAt });
-
       await pool.query(
         "INSERT INTO userips (ip, createdAt, pageUrl) VALUES (?, ?, ?)",
         [ip, createdAt, pageUrl],
@@ -50,7 +48,6 @@ export async function POST(request) {
       { status: 200 },
     );
   } catch (error) {
-    console.error("API Error:", error);
     return NextResponse.json(
       {
         success: false,
@@ -112,8 +109,6 @@ export async function GET(request) {
     // Fetch the IP and page access data
     const [rows] = await pool.query("SELECT * FROM userips ORDER BY id DESC");
 
-    console.log("Fetched IP data:", rows);
-
     return NextResponse.json(
       {
         success: true,
@@ -122,7 +117,6 @@ export async function GET(request) {
       { status: 200 },
     );
   } catch (error) {
-    console.error("API Error:", error);
     return NextResponse.json(
       {
         success: false,

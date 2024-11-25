@@ -40,7 +40,6 @@ export async function POST(request) {
     if (result.affectedRows > 0) {
       // Log the successful logout
       await logRequest(ip, "admin_logout_success");
-      localStorage.removeItem("sessionKey");
 
       return NextResponse.json(
         {
@@ -50,7 +49,6 @@ export async function POST(request) {
         { status: 200 },
       );
     } else {
-      localStorage.removeItem("sessionKey");
       return NextResponse.json(
         {
           success: false,
@@ -60,7 +58,6 @@ export async function POST(request) {
       );
     }
   } catch (error) {
-    console.error("API Error:", error);
     return NextResponse.json(
       {
         success: false,

@@ -23,10 +23,10 @@ function Contacts() {
         });
         const data = res.data;
         setContacts(data.contacts);
-        console.log(data.contacts);
       } catch (error) {
-        console.error("Failed to fetch contacts data:", error);
-        localStorage.removeItem("sessionKey");
+        if (typeof localStorage !== "undefined") {
+          localStorage.removeItem("sessionKey");
+        }
         router.push("/admin");
       }
     };

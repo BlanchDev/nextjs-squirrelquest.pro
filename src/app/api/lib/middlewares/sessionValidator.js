@@ -13,7 +13,6 @@ export async function validateSession(sessionKey, ip) {
     }
     return true;
   } catch (error) {
-    console.error("Session validation error:", error);
     await logoutNoSession(sessionKey, ip);
     return false;
   }

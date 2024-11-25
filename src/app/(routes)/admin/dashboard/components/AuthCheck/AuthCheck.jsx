@@ -15,8 +15,6 @@ function AuthCheck({ children }) {
     } else {
       router.push("/");
     }
-
-    console.log(key);
   }, [router]);
 
   if (loading) {

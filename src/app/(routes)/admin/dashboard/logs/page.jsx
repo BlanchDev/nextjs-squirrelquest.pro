@@ -23,8 +23,9 @@ function Logs() {
         const data = res.data;
         setLogs(data.logs);
       } catch (error) {
-        console.error("Failed to fetch logs data:", error);
-        localStorage.removeItem("sessionKey");
+        if (typeof localStorage !== "undefined") {
+          localStorage.removeItem("sessionKey");
+        }
         router.push("/admin");
       }
     };

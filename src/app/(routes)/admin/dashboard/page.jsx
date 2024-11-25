@@ -13,16 +13,21 @@ function Dashboard() {
         sessionKey: localStorage.getItem("sessionKey"),
       });
       if (response.data.success) {
-        localStorage.removeItem("sessionKey");
-        router.push("/admin");
+        if (typeof localStorage !== "undefined") {
+          localStorage.removeItem("sessionKey");
+        }
         toast.success(response.data.message);
       } else {
-        localStorage.removeItem("sessionKey");
+        if (typeof localStorage !== "undefined") {
+          localStorage.removeItem("sessionKey");
+        }
         router.push("/admin");
         toast.error(response.data.message);
       }
     } catch (error) {
-      localStorage.removeItem("sessionKey");
+      if (typeof localStorage !== "undefined") {
+        localStorage.removeItem("sessionKey");
+      }
       router.push("/admin");
       toast.error(error.response.data.message);
     }

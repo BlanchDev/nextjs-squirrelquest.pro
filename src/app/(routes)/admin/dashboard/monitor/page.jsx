@@ -21,11 +21,15 @@ function Monitor() {
         if (response.data.success) {
           setUserIps(response.data.data);
         } else {
-          localStorage.removeItem("sessionKey");
+          if (typeof localStorage !== "undefined") {
+            localStorage.removeItem("sessionKey");
+          }
           router.push("/admin");
         }
       } catch (error) {
-        localStorage.removeItem("sessionKey");
+        if (typeof localStorage !== "undefined") {
+          localStorage.removeItem("sessionKey");
+        }
         router.push("/admin");
       }
     };

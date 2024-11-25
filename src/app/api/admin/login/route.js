@@ -107,7 +107,6 @@ export async function POST(request) {
       { status: 200 },
     );
   } catch (error) {
-    console.error("API Error:", error);
     return NextResponse.json(
       {
         success: false,

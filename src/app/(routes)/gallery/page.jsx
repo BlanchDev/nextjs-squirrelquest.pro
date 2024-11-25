@@ -73,9 +73,7 @@ export default async function Gallery() {
             file.endsWith(".webp"),
         );
     }
-  } catch (error) {
-    console.error("Gallery error:", error);
-  }
+  } catch (error) {}
 
   return (
     <div className='gallery-page column aic gap30'>

@@ -6,7 +6,5 @@ export async function logRequest(ip, event) {
       "INSERT INTO requestlist (ip, createdAt, reqevent) VALUES (?, ?, ?)",
       [ip, Date.now(), event],
     );
-  } catch (error) {
-    console.error("Request logging error:", error);
-  }
+  } catch (error) {}
 }
