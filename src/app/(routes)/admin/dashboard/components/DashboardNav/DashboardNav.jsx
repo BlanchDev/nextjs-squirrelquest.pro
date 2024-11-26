@@ -1,14 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useRef, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import "./DashboardNav.css";
+import { toast } from "react-toastify";
 
 function DashboardNav() {
   const [lastTab, setLastTab] = useState(0);
+  const [loading, setLoading] = useState(true);
   const indicatorDashboardRef = useRef(null);
   const pathname = usePathname();
+  const router = useRouter();
+
+  useEffect(() => {
+    const sessionKey = localStorage.getItem("sessionKey");
+    if (sessionKey) {
+      setLoading(false);
+    } else {
+      router.push("/admin");
+      toast.error("Please login first");
+    }
+  }, [router]);
+
+  if (loading) {
+    return "";
+  }
 
   const moveIndicator = (element) => {
     const indicator = indicatorDashboardRef.current;
